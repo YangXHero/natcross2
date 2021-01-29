@@ -40,7 +40,7 @@ public class ClientApp {
                 //
                 HttpRoute.of("localhost", "127.0.0.1", 8080),
                 //
-//                HttpRoute.of(true, "127.0.0.1", "192.168.0.211", 9020),
+                HttpRoute.of(true, "127.0.0.1", "192.168.0.211", 9020),
                 //
         };
 

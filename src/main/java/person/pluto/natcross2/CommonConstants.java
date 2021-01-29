@@ -17,7 +17,7 @@ public final class CommonConstants {
 
     // 映射对
     public static ListenDest[] listenDestArray = new ListenDest[]{
-            //
+            //listenPort 监听端口    destIp 本地ip  destPort 本地端口
             ListenDest.of(443, "127.0.0.1", 8088)
             //
     };
