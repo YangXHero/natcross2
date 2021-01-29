@@ -9,7 +9,7 @@ import person.pluto.natcross2.clientside.config.SecretInteractiveClientConfig;
 import person.pluto.natcross2.model.HttpRoute;
 
 /**
- * 
+ *
  * <p>
  * 客户端，放在内网侧
  * </p>
@@ -28,9 +28,9 @@ public class ClientApp {
 
     /**
      * http路由
-     * 
+     *
      * 默认使用交互加密、数据不加密的策略
-     * 
+     *
      * @author Pluto
      * @since 2020-04-24 11:42:18
      * @throws Exception
@@ -40,7 +40,7 @@ public class ClientApp {
                 //
                 HttpRoute.of("localhost", "127.0.0.1", 8080),
                 //
-                HttpRoute.of(true, "127.0.0.1", "192.168.0.211", 9020),
+//                HttpRoute.of(true, "127.0.0.1", "192.168.0.211", 9020),
                 //
         };
 
@@ -66,7 +66,7 @@ public class ClientApp {
 
     /**
      * 交互、隧道都进行加密
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:29:54
      * @throws Exception
@@ -96,7 +96,7 @@ public class ClientApp {
 
     /**
      * 交互加密，即交互验证
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:30:13
      * @throws Exception
@@ -124,7 +124,7 @@ public class ClientApp {
 
     /**
      * 无加密、无验证
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:30:22
      * @throws Exception

@@ -1,27 +1,25 @@
 package person.pluto.natcross2;
 
-import java.io.FileInputStream;
-import java.net.ServerSocket;
-import java.security.KeyStore;
-
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLServerSocketFactory;
-
 import org.apache.commons.lang3.StringUtils;
-
 import person.pluto.natcross2.CommonConstants.ListenDest;
 import person.pluto.natcross2.serverside.client.ClientServiceThread;
 import person.pluto.natcross2.serverside.client.config.SecretSimpleClientServiceConfig;
 import person.pluto.natcross2.serverside.client.config.SimpleClientServiceConfig;
 import person.pluto.natcross2.serverside.listen.ListenServerControl;
-import person.pluto.natcross2.serverside.listen.config.SimpleListenServerConfig;
-import person.pluto.natcross2.serverside.listen.serversocket.ICreateServerSocket;
 import person.pluto.natcross2.serverside.listen.config.AllSecretSimpleListenServerConfig;
 import person.pluto.natcross2.serverside.listen.config.SecretSimpleListenServerConfig;
+import person.pluto.natcross2.serverside.listen.config.SimpleListenServerConfig;
+import person.pluto.natcross2.serverside.listen.serversocket.ICreateServerSocket;
+
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLServerSocketFactory;
+import java.io.FileInputStream;
+import java.net.ServerSocket;
+import java.security.KeyStore;
 
 /**
- * 
+ *
  * <p>
  * 服务端，放在外网侧
  * </p>
@@ -32,9 +30,9 @@ import person.pluto.natcross2.serverside.listen.config.SecretSimpleListenServerC
 public class ServerApp {
 
     // 你的p12格式的证书路径
-    private static String sslKeyStorePath = System.getenv("sslKeyStorePath");
+    private static String sslKeyStorePath = "/usr/local/nginx/master.p12";
     // 你的证书密码
-    private static String sslKeyStorePassword = System.getenv("sslKeyStorePassword");
+    private static String sslKeyStorePassword = "yk942698";
 
     public static ICreateServerSocket createServerSocket;
 
@@ -59,7 +57,9 @@ public class ServerApp {
                 }
             };
         }
-        createServerSocket = null;
+        else {
+            createServerSocket = null;
+        }
 
 //        simple();
         secret();
@@ -68,7 +68,7 @@ public class ServerApp {
 
     /**
      * 交互、隧道都进行加密
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:29:26
      * @throws Exception
@@ -95,7 +95,7 @@ public class ServerApp {
 
     /**
      * 交互加密，即交互验证
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:28:54
      * @throws Exception
@@ -121,7 +121,7 @@ public class ServerApp {
 
     /**
      * 无加密、无验证
-     * 
+     *
      * @author Pluto
      * @since 2020-01-08 17:29:02
      * @throws Exception

@@ -34,7 +34,7 @@ mvn clean compile package -PclientApp
 
 ## 参数解释
 ServerApp：
-
+openssl pkcs12 -export -in 1_crmyy.com_bundle.crt -inkey 2_crmyy.com.key -out master.p12
 |字段|解释|
 |:-:|:-|
 |serviceIp|公网服务器的IP|
